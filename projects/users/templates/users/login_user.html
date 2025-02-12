@@ -1,0 +1,28 @@
+{% extends "base_1.html" %}
+{% block content_1 %}
+
+<style>
+    body {
+        background-color: white; /* ✅ White background */
+    }
+</style>
+
+<main class="d-flex justify-content-center align-items-center vh-100"> 
+    <div class="card p-4 shadow-lg center bg-dark text-white" style="width: 350px;">
+        <h2 class="text-center mb-4">Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-control bg-secondary text-white" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control bg-secondary text-white" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</main>
+
+{% endblock content_1 %}
